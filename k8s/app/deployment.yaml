@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      component: app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: app
+    spec:
+      containers:
+        - name: app
+          image: tcc-app
+          ports:
+            - containerPort: 80
+          imagePullPolicy: "Never"  
+

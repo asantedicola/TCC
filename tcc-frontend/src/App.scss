@@ -1,0 +1,21 @@
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../public/images/bg-home.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+footer {
+}
+

@@ -1,0 +1,13 @@
+namespace: tcc
+commonLabels:
+  app: tcc
+resources:
+  - namespace.yaml
+  - secrets.yaml
+  - mariadb
+  - directus
+  - app
+  - mailhog
+  - ingress.yaml
+
+

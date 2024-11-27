@@ -1,0 +1,5 @@
+commonLabels:
+  component: cms
+resources:
+  - deployment.yaml
+  - service.yaml

@@ -1,0 +1,12 @@
+version: "2"
+services:
+  web:
+    container_name: tcc-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tcc-app
+    ports:
+      - 80:80
+    environment:
+      NODE_ENV: production

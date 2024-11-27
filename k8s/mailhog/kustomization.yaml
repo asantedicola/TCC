@@ -1,0 +1,11 @@
+commonLabels:
+  component: mail
+helmCharts:
+  - name: mailhog
+    namespace: tcc
+    version: "5.2.3"
+    repo: "https://codecentric.github.io/helm-charts"
+    releaseName: mailhog
+    valuesInline:
+      auth:
+        enabled: false

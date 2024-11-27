@@ -1,0 +1,33 @@
+commonLabels:
+  component: mariadb
+resources:
+  - configmap.yaml
+helmCharts:
+  - name: mariadb
+    namespace: tcc
+    version: "11.4.3"
+    repo: "https://charts.bitnami.com/bitnami"
+    releaseName: mariadb
+    valuesInline:
+      image:
+        registry: docker.io
+        repository: bitnami/mariadb
+        tag: 11.4.3-debian-12-r1
+        pullPolicy: IfNotPresent
+      architecture: standalone
+      auth:
+        database: tcc
+        username: "tcc"
+        existingSecret: mariadb-secrets
+      initdbScriptsConfigMap: mariadb-initdb-config
+      primary:
+        persistence:
+          enabled: true
+          size: 2Gi
+        service:
+          type: ClusterIP
+        livenessProbe:
+          enabled: false
+        readinessProbe:
+          enabled: false
+

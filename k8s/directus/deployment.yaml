@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms
+spec:
+  selector:
+    matchLabels:
+      component: cms
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: cms
+    spec:
+      containers:
+        - name: cms
+          image: directus/directus:11.1.1
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - name: http
+              containerPort: 8055
+              protocol: TCP
+          env:
+            - name: PUBLIC_URL
+              value: "http://cms.tcc.local"
+            - name: CORS_ORIGIN
+              value: "http://app.tcc.local"
+            - name: CORS_ENABLED
+              value: "true"
+            - name: CORS_METHODS
+              value: "GET,POST,PUT,DELETE"
+            - name: CORS_ALLOWED_HEADERS
+              value: "Content-Type,Authorization,X-Requested-With"
+            - name: ADMIN_EMAIL
+              value: "admin@example.com"
+            - name: ADMIN_PASSWORD
+              value: "admin"
+            - name: DB_CLIENT
+              value: "mysql2"
+            - name: DB_DATABASE
+              value: "tcc"
+            - name: DB_HOST
+              value: "mariadb"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_USER
+              value: "root"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb-secrets
+                  key: mariadb-root-password
+            - name: WEBSOCKETS_ENABLED
+              value: "true"
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "250Mi"
+            limits:
+              cpu: "0.5"
+              memory: "1Gi"
