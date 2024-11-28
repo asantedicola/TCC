@@ -16,7 +16,7 @@ const Services = ({
    } = useApi();
 
    const handleChangePage = (pageChange) => {
-      console.log("changing page to", pageChange);
+
       if (pageChange !== page && pageChange >= 1 && pageChange <= servicosTotalPages) {
          onPageChange(pageChange); 
       }
@@ -41,7 +41,7 @@ const Services = ({
                <tbody>
                   {servicos.map((servico, index) => (
                      <tr key={index}>
-                        <th scope="row"><Link to={`/instituicao/${servico.instituicao_id}`}>{servico.titulo}</Link></th> 
+                        <th scope="row"><Link to={`/instituicao/${servico.instituicao_id.id}`}>{servico.titulo}</Link></th>
 
                         <td>{servico.descricao}</td>         
                         <td>{servico.carga_horaria} hora(s) por semana</td> 

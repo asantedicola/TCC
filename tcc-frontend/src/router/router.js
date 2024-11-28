@@ -29,11 +29,11 @@ const router = createBrowserRouter([
             element: <Instituicao/>
          },
          {
-            path: "instituicao/:id",
+            path: "instituicao/:instituicao_id",
             element: <BuscaInstituicao/>
          },
          {
-            path: "doacoes",
+            path: "instituicao/:instituicao_id/doacoes",
             element: <Doacoes/>
          },
          {
