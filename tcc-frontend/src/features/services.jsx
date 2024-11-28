@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useApi from "../api/apiServicos";
+import { Link } from "react-router-dom";
 
 const Services = ({
                      query,      
@@ -40,7 +41,8 @@ const Services = ({
                <tbody>
                   {servicos.map((servico, index) => (
                      <tr key={index}>
-                        <th scope="row">{servico.titulo}</th> 
+                        <th scope="row"><Link to={`/instituicao/${servico.instituicao_id}`}>{servico.titulo}</Link></th> 
+
                         <td>{servico.descricao}</td>         
                         <td>{servico.carga_horaria} hora(s) por semana</td> 
                         {/* <td>{servico.vagas - servico.disponibilidade} de {servico.vagas}</td>  */}
