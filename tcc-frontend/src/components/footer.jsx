@@ -10,7 +10,7 @@ const Footer = () => {
          <li className="nav-item"><Link className="nav-link px-2 text-body-secondary" to="/sobre_nos">Sobre nós</Link>
          </li>
       </ul>
-      <p className="text-center text-body-secondary">© 2024 Company, Inc</p>
+      <p className="text-center text-body-secondary">© 2024 Comunidade Conectada</p>
    </footer>
 }
 
