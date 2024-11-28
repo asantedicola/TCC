@@ -1,0 +1,8 @@
+* Tabela Doações
+* Listar Instituições através de serviços
+* Cadastrar Voluntário
+* Login Voluntário
+* Histórico de doações do Voluntário
+* Login Instituição
+* Cadastro de Serviço 
+* Excluir Serviço (caso seja viável - low priority)
